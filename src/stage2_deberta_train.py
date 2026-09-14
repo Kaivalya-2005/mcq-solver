@@ -451,7 +451,7 @@ def main():
         weight_decay=0.01,
 
         # GPU
-        fp16=false,
+        fp16=False,
 
         # Select best model using MAP@3
         load_best_model_at_end=True,
