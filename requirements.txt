@@ -1,9 +1,0 @@
-pandas
-numpy
-scikit-learn
-transformers
-torch
-datasets
-accelerate
-sentence-transformers
-huggingface_hub

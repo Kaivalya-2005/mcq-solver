@@ -1,4 +1,3 @@
-"""Shared data loading. DATA_DIR is overridden per-environment (local/Colab/Kaggle)."""
 import os
 import pandas as pd
 
