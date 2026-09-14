@@ -487,7 +487,7 @@ def main():
 
         eval_dataset=val_ds,
 
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
 
         data_collator=DataCollatorForMultipleChoice(
             tokenizer=tokenizer
