@@ -12,18 +12,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.model_selection import train_test_split
 
 from src.data_utils import load_train, load_test, make_submission, OPTION_COLS
-
-def map_at_3(true_labels, pred_top3_lists):
-    """Mean Average Precision @ 3"""
-    scores = []
-    for true, preds in zip(true_labels, pred_top3_lists):
-        score = 0.0
-        for i, p in enumerate(preds[:3]):
-            if p == true:
-                score = 1.0 / (i + 1)
-                break
-        scores.append(score)
-    return float(np.mean(scores))
+from src.map3 import map_at_3
 
 
 def rank_options_tfidf(df, vectorizer):
