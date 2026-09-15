@@ -60,6 +60,15 @@ MCQ_MAX_NEW_TOKENS=16
 MCQ_MIN_CALL_GAP=1.0
 ```
 
+Current Stage 4 model priority:
+
+1. `qwen/qwen3.8-27b` (primary)
+2. `groq/compound-mini` (fallback)
+3. `openai/gpt-oss-20b` (fallback)
+
+At runtime, the script also appends any other models accessible to your Groq
+key and automatically switches when a model is unavailable or quota-limited.
+
 Other useful variables:
 
 - `MCQ_DATA_DIR` — location of `train.csv` and `test.csv`
@@ -244,7 +253,7 @@ Important behavior:
 - Loads `.env` automatically from the project root.
 - Saves cache to `data_enriched/llm_cache.json`.
 - Resumes from cache after interruption.
-- Falls back across multiple accessible Groq models.
+- Falls back across multiple accessible Groq models (currently `qwen/qwen3.8-27b` → `groq/compound-mini` → `openai/gpt-oss-20b`, then other accessible models).
 
 Run:
 
@@ -299,8 +308,8 @@ Verified validation scores:
 | Stage | Method | Val metric |
 |---|---|---|
 | 1 | TF-IDF baseline | 0.3204 MAP@3 |
-| 2 | DeBERTa-v3 fine-tuned | 0.2425 accuracy, 0.4104 MAP@3 |
-| 4 | Groq LLM + retrieved context | 0.6850 MAP@3 |
+| 2 | DeBERTa-v3 fine-tuned (group-aware split) | 0.2168 accuracy, 0.4324 MAP@3 |
+| 4 | Groq LLM + retrieved context | 0.6930 MAP@3 |
 
 Generated submissions:
 
