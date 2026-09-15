@@ -22,6 +22,9 @@ dependencies = [
     "huggingface_hub>=0.16.0",
     "sentencepiece>=0.2.2",
     "protobuf>=7.36.1",
+    "requests>=2.34.2",
+    "rank-bm25>=0.2.2",
+    "faiss-cpu>=1.15.0",
 ]
 
 [project.optional-dependencies]
