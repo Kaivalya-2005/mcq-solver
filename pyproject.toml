@@ -25,6 +25,8 @@ dependencies = [
     "requests>=2.34.2",
     "rank-bm25>=0.2.2",
     "faiss-cpu>=1.15.0",
+    "groq>=1.7.0",
+    "python-dotenv>=1.2.3",
 ]
 
 [project.optional-dependencies]
